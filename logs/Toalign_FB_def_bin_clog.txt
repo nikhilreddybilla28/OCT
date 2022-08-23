@@ -1,0 +1,344 @@
+[2022-08-23 07:17:20] ======================= args =======================
+{
+    "cfg": "configs/uda_OCT_toalign.yaml",
+    "seed": 123,
+    "source": [
+        "f"
+    ],
+    "target": [
+        "b"
+    ],
+    "output_root": "exps/binTA",
+    "output_dir": null,
+    "data_root": "/data/neuroretinal/UDA/binary",
+    "opts": null
+}
+[2022-08-23 07:17:20] ======================= cfg =======================
+DATASET:
+    NAME: binary
+    NUM_CLASSES: 2
+    ROOT: /data/neuroretinal/UDA/binary
+    SOURCE:
+    - Foveal
+    TARGET:
+    - Biop
+    TRIM: 0
+METHOD:
+    ENT: true
+    HDA:
+        LR_MULT: 1.0
+        W_HDA: 1.0
+    W_ALG: 1.0
+MODEL:
+    BASENET: resnet50
+    BASENET_DOMAIN_EBD: false
+    DNET: Discriminator
+    D_HIDDEN_SIZE: 1024
+    D_INDIM: 1024
+    D_OUTDIM: 1
+    D_WGAN_CLIP: 0.01
+    EXT_DPR: 0.1
+    EXT_FEATURE: 768
+    EXT_LAYER: false
+    EXT_LR: 10.0
+    EXT_NUM_HEADS: 24
+    EXT_NUM_LAYERS: 1
+    EXT_NUM_TOKENS: 100
+    EXT_SKIP: true
+    PRETRAIN: true
+    VIT_DPR: 0.1
+    VIT_PRETRAIN_EXLD: []
+    VIT_USE_CLS_TOKEN: true
+OPTIM:
+    MOMENTUM: 0.9
+    WEIGHT_DECAY: 5.0e-05
+SEED: 123
+TASK:
+    NAME: UDA
+    SSDA_SHOT: 1
+TRAIN:
+    BATCH_SIZE_SOURCE: 36
+    BATCH_SIZE_TARGET: 36
+    BATCH_SIZE_TEST: 36
+    LR: 0.0002
+    OUTPUT_CKPT: exps/binTA/ckpt/Foveal2Biop_123
+    OUTPUT_DIR: Foveal2Biop_123
+    OUTPUT_LOG: exps/binTA/log/Foveal2Biop_123
+    OUTPUT_RESFILE: exps/binTA/log/Foveal2Biop_123/log.txt
+    OUTPUT_ROOT: exps/binTA
+    OUTPUT_TB: exps/binTA/tensorboard/Foveal2Biop_123
+    PRINT_FREQ: 50
+    SAVE_FREQ: 5000
+    TEST_FREQ: 500
+    TTL_ITE: 8000
+TRAINER: ToAlign
+WORKERS: 1
+
+[2022-08-23 07:17:20] --> trainer: ToAlign
+[2022-08-23 07:17:20] --> building dataset from: binary
+[2022-08-23 07:17:20]     source ['Foveal']: 67/68
+[2022-08-23 07:17:20]     target ['Biop']: 45/46
+[2022-08-23 07:17:20] --> building models: resnet50
+[2022-08-23 07:17:21]     models keys / loaded keys: 326/265
+[2022-08-23 07:17:23]     base_net paras: 23.52M
+[2022-08-23 07:17:23]     d_net paras: 1.05M
+[2022-08-23 07:17:23] --> training from scratch
+[2022-08-23 07:17:27] I:  0/8000 | lr: 0.00020 | l_cls_src: 0.681 | l_cls_tar: 0.645 | l_alg: 0.840 | l_hda: 0.389 | l_ttl: 1.910 | ent_tar: 0.644 | best_acc: 0.000 
+[2022-08-23 07:18:21] I:  50/8000 | lr: 0.00019 | l_cls_src: 0.323 | l_cls_tar: 0.725 | l_alg: 0.599 | l_hda: 0.758 | l_ttl: 1.680 | ent_tar: 0.404 | best_acc: 0.000 
+[2022-08-23 07:19:16] I:  100/8000 | lr: 0.00018 | l_cls_src: 0.469 | l_cls_tar: 0.954 | l_alg: 0.475 | l_hda: 0.804 | l_ttl: 1.749 | ent_tar: 0.537 | best_acc: 0.000 
+[2022-08-23 07:20:11] I:  150/8000 | lr: 0.00018 | l_cls_src: 0.408 | l_cls_tar: 0.513 | l_alg: 0.589 | l_hda: 0.918 | l_ttl: 1.916 | ent_tar: 0.292 | best_acc: 0.000 
+[2022-08-23 07:21:05] I:  200/8000 | lr: 0.00017 | l_cls_src: 0.179 | l_cls_tar: 0.603 | l_alg: 0.730 | l_hda: 0.741 | l_ttl: 1.650 | ent_tar: 0.167 | best_acc: 0.000 
+[2022-08-23 07:22:00] I:  250/8000 | lr: 0.00016 | l_cls_src: 0.093 | l_cls_tar: 0.711 | l_alg: 0.670 | l_hda: 0.249 | l_ttl: 1.012 | ent_tar: 0.218 | best_acc: 0.000 
+[2022-08-23 07:22:54] I:  300/8000 | lr: 0.00016 | l_cls_src: 0.060 | l_cls_tar: 0.876 | l_alg: 0.650 | l_hda: 0.307 | l_ttl: 1.016 | ent_tar: 0.124 | best_acc: 0.000 
+[2022-08-23 07:23:49] I:  350/8000 | lr: 0.00015 | l_cls_src: 0.019 | l_cls_tar: 0.852 | l_alg: 0.691 | l_hda: 0.219 | l_ttl: 0.930 | ent_tar: 0.198 | best_acc: 0.000 
+[2022-08-23 07:24:43] I:  400/8000 | lr: 0.00015 | l_cls_src: 0.086 | l_cls_tar: 0.504 | l_alg: 0.710 | l_hda: 0.260 | l_ttl: 1.057 | ent_tar: 0.163 | best_acc: 0.000 
+[2022-08-23 07:25:38] I:  450/8000 | lr: 0.00014 | l_cls_src: 0.097 | l_cls_tar: 0.591 | l_alg: 0.730 | l_hda: 0.123 | l_ttl: 0.949 | ent_tar: 0.141 | best_acc: 0.000 
+[2022-08-23 07:26:31] --> testing on source_test
+[2022-08-23 07:27:08]     I:  49/68 | acc: 96.542
+[2022-08-23 07:27:21] --> testing on target_test
+[2022-08-23 07:27:32] I:  499/8000 | src_acc: 96.301 | tar_acc: 87.638 | best_acc: 87.638
+[2022-08-23 07:27:33]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 07:27:33]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 07:27:33]     best models saved to exps/binTA/ckpt/Foveal2Biop_123/models-best.pt
+[2022-08-23 07:27:34] I:  500/8000 | lr: 0.00014 | l_cls_src: 0.097 | l_cls_tar: 0.348 | l_alg: 0.681 | l_hda: 0.142 | l_ttl: 0.920 | ent_tar: 0.087 | best_acc: 87.638 
+[2022-08-23 07:28:29] I:  550/8000 | lr: 0.00014 | l_cls_src: 0.164 | l_cls_tar: 0.708 | l_alg: 0.631 | l_hda: 0.180 | l_ttl: 0.975 | ent_tar: 0.128 | best_acc: 87.638 
+[2022-08-23 07:29:23] I:  600/8000 | lr: 0.00013 | l_cls_src: 0.061 | l_cls_tar: 0.591 | l_alg: 0.698 | l_hda: 0.059 | l_ttl: 0.818 | ent_tar: 0.159 | best_acc: 87.638 
+[2022-08-23 07:30:18] I:  650/8000 | lr: 0.00013 | l_cls_src: 0.036 | l_cls_tar: 0.956 | l_alg: 0.692 | l_hda: 0.097 | l_ttl: 0.825 | ent_tar: 0.121 | best_acc: 87.638 
+[2022-08-23 07:31:13] I:  700/8000 | lr: 0.00012 | l_cls_src: 0.116 | l_cls_tar: 0.642 | l_alg: 0.720 | l_hda: 0.101 | l_ttl: 0.937 | ent_tar: 0.064 | best_acc: 87.638 
+[2022-08-23 07:32:07] I:  750/8000 | lr: 0.00012 | l_cls_src: 0.075 | l_cls_tar: 0.665 | l_alg: 0.672 | l_hda: 0.153 | l_ttl: 0.900 | ent_tar: 0.080 | best_acc: 87.638 
+[2022-08-23 07:33:01] I:  800/8000 | lr: 0.00012 | l_cls_src: 0.013 | l_cls_tar: 0.730 | l_alg: 0.673 | l_hda: 0.086 | l_ttl: 0.772 | ent_tar: 0.133 | best_acc: 87.638 
+[2022-08-23 07:33:56] I:  850/8000 | lr: 0.00012 | l_cls_src: 0.066 | l_cls_tar: 1.015 | l_alg: 0.668 | l_hda: 0.125 | l_ttl: 0.859 | ent_tar: 0.081 | best_acc: 87.638 
+[2022-08-23 07:34:51] I:  900/8000 | lr: 0.00011 | l_cls_src: 0.049 | l_cls_tar: 1.310 | l_alg: 0.744 | l_hda: 0.073 | l_ttl: 0.866 | ent_tar: 0.112 | best_acc: 87.638 
+[2022-08-23 07:35:46] I:  950/8000 | lr: 0.00011 | l_cls_src: 0.060 | l_cls_tar: 0.551 | l_alg: 0.722 | l_hda: 0.109 | l_ttl: 0.891 | ent_tar: 0.058 | best_acc: 87.638 
+[2022-08-23 07:36:37] --> testing on source_test
+[2022-08-23 07:37:14]     I:  49/68 | acc: 96.542
+[2022-08-23 07:37:28] --> testing on target_test
+[2022-08-23 07:37:39] I:  999/8000 | src_acc: 96.589 | tar_acc: 86.842 | best_acc: 87.638
+[2022-08-23 07:37:39]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 07:37:39]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 07:37:41] I:  1000/8000 | lr: 0.00011 | l_cls_src: 0.059 | l_cls_tar: 0.506 | l_alg: 0.662 | l_hda: 0.086 | l_ttl: 0.807 | ent_tar: 0.068 | best_acc: 87.638 
+[2022-08-23 07:38:35] I:  1050/8000 | lr: 0.00011 | l_cls_src: 0.133 | l_cls_tar: 0.705 | l_alg: 0.702 | l_hda: 0.139 | l_ttl: 0.974 | ent_tar: 0.085 | best_acc: 87.638 
+[2022-08-23 07:39:30] I:  1100/8000 | lr: 0.00010 | l_cls_src: 0.012 | l_cls_tar: 0.674 | l_alg: 0.700 | l_hda: 0.101 | l_ttl: 0.813 | ent_tar: 0.051 | best_acc: 87.638 
+[2022-08-23 07:40:25] I:  1150/8000 | lr: 0.00010 | l_cls_src: 0.012 | l_cls_tar: 1.528 | l_alg: 0.693 | l_hda: 0.082 | l_ttl: 0.787 | ent_tar: 0.043 | best_acc: 87.638 
+[2022-08-23 07:41:19] I:  1200/8000 | lr: 0.00010 | l_cls_src: 0.003 | l_cls_tar: 0.705 | l_alg: 0.690 | l_hda: 0.111 | l_ttl: 0.805 | ent_tar: 0.054 | best_acc: 87.638 
+[2022-08-23 07:42:14] I:  1250/8000 | lr: 0.00010 | l_cls_src: 0.054 | l_cls_tar: 1.566 | l_alg: 0.696 | l_hda: 0.078 | l_ttl: 0.829 | ent_tar: 0.066 | best_acc: 87.638 
+[2022-08-23 07:43:09] I:  1300/8000 | lr: 0.00010 | l_cls_src: 0.110 | l_cls_tar: 1.540 | l_alg: 0.681 | l_hda: 0.136 | l_ttl: 0.926 | ent_tar: 0.033 | best_acc: 87.638 
+[2022-08-23 07:44:04] I:  1350/8000 | lr: 0.00010 | l_cls_src: 0.037 | l_cls_tar: 0.570 | l_alg: 0.727 | l_hda: 0.137 | l_ttl: 0.900 | ent_tar: 0.016 | best_acc: 87.638 
+[2022-08-23 07:44:58] I:  1400/8000 | lr: 0.00009 | l_cls_src: 0.178 | l_cls_tar: 1.459 | l_alg: 0.707 | l_hda: 0.134 | l_ttl: 1.019 | ent_tar: 0.042 | best_acc: 87.638 
+[2022-08-23 07:45:53] I:  1450/8000 | lr: 0.00009 | l_cls_src: 0.049 | l_cls_tar: 2.160 | l_alg: 0.692 | l_hda: 0.073 | l_ttl: 0.814 | ent_tar: 0.024 | best_acc: 87.638 
+[2022-08-23 07:46:45] --> testing on source_test
+[2022-08-23 07:47:22]     I:  49/68 | acc: 98.243
+[2022-08-23 07:47:36] --> testing on target_test
+[2022-08-23 07:47:47] I:  1499/8000 | src_acc: 96.958 | tar_acc: 86.291 | best_acc: 87.638
+[2022-08-23 07:47:47]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 07:47:47]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 07:47:49] I:  1500/8000 | lr: 0.00009 | l_cls_src: 0.031 | l_cls_tar: 1.192 | l_alg: 0.721 | l_hda: 0.044 | l_ttl: 0.796 | ent_tar: 0.017 | best_acc: 87.638 
+[2022-08-23 07:48:43] I:  1550/8000 | lr: 0.00009 | l_cls_src: 0.041 | l_cls_tar: 1.041 | l_alg: 0.695 | l_hda: 0.108 | l_ttl: 0.843 | ent_tar: 0.060 | best_acc: 87.638 
+[2022-08-23 07:49:37] I:  1600/8000 | lr: 0.00009 | l_cls_src: 0.049 | l_cls_tar: 1.496 | l_alg: 0.708 | l_hda: 0.059 | l_ttl: 0.816 | ent_tar: 0.093 | best_acc: 87.638 
+[2022-08-23 07:50:32] I:  1650/8000 | lr: 0.00009 | l_cls_src: 0.109 | l_cls_tar: 0.779 | l_alg: 0.691 | l_hda: 0.070 | l_ttl: 0.869 | ent_tar: 0.030 | best_acc: 87.638 
+[2022-08-23 07:51:26] I:  1700/8000 | lr: 0.00009 | l_cls_src: 0.002 | l_cls_tar: 1.694 | l_alg: 0.736 | l_hda: 0.054 | l_ttl: 0.792 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 07:52:21] I:  1750/8000 | lr: 0.00008 | l_cls_src: 0.012 | l_cls_tar: 1.034 | l_alg: 0.698 | l_hda: 0.054 | l_ttl: 0.765 | ent_tar: 0.033 | best_acc: 87.638 
+[2022-08-23 07:53:16] I:  1800/8000 | lr: 0.00008 | l_cls_src: 0.015 | l_cls_tar: 0.829 | l_alg: 0.713 | l_hda: 0.076 | l_ttl: 0.804 | ent_tar: 0.079 | best_acc: 87.638 
+[2022-08-23 07:54:10] I:  1850/8000 | lr: 0.00008 | l_cls_src: 0.047 | l_cls_tar: 1.869 | l_alg: 0.676 | l_hda: 0.064 | l_ttl: 0.787 | ent_tar: 0.041 | best_acc: 87.638 
+[2022-08-23 07:55:05] I:  1900/8000 | lr: 0.00008 | l_cls_src: 0.030 | l_cls_tar: 1.055 | l_alg: 0.715 | l_hda: 0.051 | l_ttl: 0.797 | ent_tar: 0.023 | best_acc: 87.638 
+[2022-08-23 07:56:00] I:  1950/8000 | lr: 0.00008 | l_cls_src: 0.009 | l_cls_tar: 2.101 | l_alg: 0.726 | l_hda: 0.099 | l_ttl: 0.834 | ent_tar: 0.062 | best_acc: 87.638 
+[2022-08-23 07:56:52] --> testing on source_test
+[2022-08-23 07:57:29]     I:  49/68 | acc: 97.222
+[2022-08-23 07:57:43] --> testing on target_test
+[2022-08-23 07:57:53] I:  1999/8000 | src_acc: 96.136 | tar_acc: 85.496 | best_acc: 87.638
+[2022-08-23 07:57:54]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 07:57:54]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 07:57:55] I:  2000/8000 | lr: 0.00008 | l_cls_src: 0.330 | l_cls_tar: 1.392 | l_alg: 0.713 | l_hda: 0.041 | l_ttl: 1.084 | ent_tar: 0.048 | best_acc: 87.638 
+[2022-08-23 07:58:50] I:  2050/8000 | lr: 0.00008 | l_cls_src: 0.003 | l_cls_tar: 0.808 | l_alg: 0.725 | l_hda: 0.106 | l_ttl: 0.834 | ent_tar: 0.010 | best_acc: 87.638 
+[2022-08-23 07:59:44] I:  2100/8000 | lr: 0.00008 | l_cls_src: 0.003 | l_cls_tar: 0.528 | l_alg: 0.690 | l_hda: 0.058 | l_ttl: 0.751 | ent_tar: 0.032 | best_acc: 87.638 
+[2022-08-23 08:00:39] I:  2150/8000 | lr: 0.00008 | l_cls_src: 0.050 | l_cls_tar: 1.017 | l_alg: 0.701 | l_hda: 0.048 | l_ttl: 0.799 | ent_tar: 0.036 | best_acc: 87.638 
+[2022-08-23 08:01:33] I:  2200/8000 | lr: 0.00007 | l_cls_src: 0.005 | l_cls_tar: 1.013 | l_alg: 0.695 | l_hda: 0.085 | l_ttl: 0.786 | ent_tar: 0.068 | best_acc: 87.638 
+[2022-08-23 08:02:28] I:  2250/8000 | lr: 0.00007 | l_cls_src: 0.008 | l_cls_tar: 1.736 | l_alg: 0.692 | l_hda: 0.055 | l_ttl: 0.755 | ent_tar: 0.054 | best_acc: 87.638 
+[2022-08-23 08:03:23] I:  2300/8000 | lr: 0.00007 | l_cls_src: 0.007 | l_cls_tar: 0.519 | l_alg: 0.694 | l_hda: 0.047 | l_ttl: 0.748 | ent_tar: 0.013 | best_acc: 87.638 
+[2022-08-23 08:04:17] I:  2350/8000 | lr: 0.00007 | l_cls_src: 0.050 | l_cls_tar: 1.767 | l_alg: 0.685 | l_hda: 0.044 | l_ttl: 0.778 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 08:05:12] I:  2400/8000 | lr: 0.00007 | l_cls_src: 0.020 | l_cls_tar: 2.216 | l_alg: 0.724 | l_hda: 0.083 | l_ttl: 0.827 | ent_tar: 0.015 | best_acc: 87.638 
+[2022-08-23 08:06:07] I:  2450/8000 | lr: 0.00007 | l_cls_src: 0.050 | l_cls_tar: 1.581 | l_alg: 0.690 | l_hda: 0.098 | l_ttl: 0.838 | ent_tar: 0.041 | best_acc: 87.638 
+[2022-08-23 08:07:00] --> testing on source_test
+[2022-08-23 08:07:37]     I:  49/68 | acc: 98.016
+[2022-08-23 08:07:50] --> testing on target_test
+[2022-08-23 08:08:01] I:  2499/8000 | src_acc: 97.945 | tar_acc: 86.047 | best_acc: 87.638
+[2022-08-23 08:08:01]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:08:01]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:08:03] I:  2500/8000 | lr: 0.00007 | l_cls_src: 0.009 | l_cls_tar: 1.769 | l_alg: 0.729 | l_hda: 0.032 | l_ttl: 0.771 | ent_tar: 0.045 | best_acc: 87.638 
+[2022-08-23 08:08:57] I:  2550/8000 | lr: 0.00007 | l_cls_src: 0.011 | l_cls_tar: 2.169 | l_alg: 0.684 | l_hda: 0.070 | l_ttl: 0.764 | ent_tar: 0.059 | best_acc: 87.638 
+[2022-08-23 08:09:52] I:  2600/8000 | lr: 0.00007 | l_cls_src: 0.047 | l_cls_tar: 1.671 | l_alg: 0.722 | l_hda: 0.037 | l_ttl: 0.806 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:10:47] I:  2650/8000 | lr: 0.00007 | l_cls_src: 0.037 | l_cls_tar: 0.745 | l_alg: 0.691 | l_hda: 0.046 | l_ttl: 0.774 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 08:11:42] I:  2700/8000 | lr: 0.00007 | l_cls_src: 0.005 | l_cls_tar: 0.780 | l_alg: 0.691 | l_hda: 0.077 | l_ttl: 0.773 | ent_tar: 0.016 | best_acc: 87.638 
+[2022-08-23 08:12:37] I:  2750/8000 | lr: 0.00007 | l_cls_src: 0.014 | l_cls_tar: 1.290 | l_alg: 0.692 | l_hda: 0.050 | l_ttl: 0.756 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 08:13:31] I:  2800/8000 | lr: 0.00006 | l_cls_src: 0.006 | l_cls_tar: 1.963 | l_alg: 0.719 | l_hda: 0.079 | l_ttl: 0.804 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:14:26] I:  2850/8000 | lr: 0.00006 | l_cls_src: 0.030 | l_cls_tar: 1.644 | l_alg: 0.706 | l_hda: 0.058 | l_ttl: 0.794 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 08:15:20] I:  2900/8000 | lr: 0.00006 | l_cls_src: 0.000 | l_cls_tar: 0.867 | l_alg: 0.700 | l_hda: 0.067 | l_ttl: 0.767 | ent_tar: 0.010 | best_acc: 87.638 
+[2022-08-23 08:16:15] I:  2950/8000 | lr: 0.00006 | l_cls_src: 0.007 | l_cls_tar: 1.140 | l_alg: 0.699 | l_hda: 0.054 | l_ttl: 0.760 | ent_tar: 0.021 | best_acc: 87.638 
+[2022-08-23 08:17:07] --> testing on source_test
+[2022-08-23 08:17:44]     I:  49/68 | acc: 97.392
+[2022-08-23 08:17:58] --> testing on target_test
+[2022-08-23 08:18:09] I:  2999/8000 | src_acc: 97.657 | tar_acc: 84.333 | best_acc: 87.638
+[2022-08-23 08:18:09]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:18:09]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:18:10] I:  3000/8000 | lr: 0.00006 | l_cls_src: 0.006 | l_cls_tar: 1.613 | l_alg: 0.678 | l_hda: 0.028 | l_ttl: 0.711 | ent_tar: 0.045 | best_acc: 87.638 
+[2022-08-23 08:19:05] I:  3050/8000 | lr: 0.00006 | l_cls_src: 0.035 | l_cls_tar: 1.098 | l_alg: 0.698 | l_hda: 0.054 | l_ttl: 0.788 | ent_tar: 0.006 | best_acc: 87.638 
+[2022-08-23 08:19:59] I:  3100/8000 | lr: 0.00006 | l_cls_src: 0.010 | l_cls_tar: 2.244 | l_alg: 0.701 | l_hda: 0.061 | l_ttl: 0.772 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 08:20:55] I:  3150/8000 | lr: 0.00006 | l_cls_src: 0.011 | l_cls_tar: 3.050 | l_alg: 0.685 | l_hda: 0.055 | l_ttl: 0.750 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 08:21:49] I:  3200/8000 | lr: 0.00006 | l_cls_src: 0.013 | l_cls_tar: 1.824 | l_alg: 0.719 | l_hda: 0.045 | l_ttl: 0.777 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:22:44] I:  3250/8000 | lr: 0.00006 | l_cls_src: 0.016 | l_cls_tar: 1.247 | l_alg: 0.720 | l_hda: 0.035 | l_ttl: 0.771 | ent_tar: 0.029 | best_acc: 87.638 
+[2022-08-23 08:23:39] I:  3300/8000 | lr: 0.00006 | l_cls_src: 0.019 | l_cls_tar: 2.628 | l_alg: 0.693 | l_hda: 0.044 | l_ttl: 0.757 | ent_tar: 0.008 | best_acc: 87.638 
+[2022-08-23 08:24:34] I:  3350/8000 | lr: 0.00006 | l_cls_src: 0.040 | l_cls_tar: 1.345 | l_alg: 0.698 | l_hda: 0.050 | l_ttl: 0.788 | ent_tar: 0.040 | best_acc: 87.638 
+[2022-08-23 08:25:28] I:  3400/8000 | lr: 0.00006 | l_cls_src: 0.005 | l_cls_tar: 1.509 | l_alg: 0.707 | l_hda: 0.038 | l_ttl: 0.749 | ent_tar: 0.038 | best_acc: 87.638 
+[2022-08-23 08:26:23] I:  3450/8000 | lr: 0.00006 | l_cls_src: 0.022 | l_cls_tar: 3.101 | l_alg: 0.702 | l_hda: 0.035 | l_ttl: 0.759 | ent_tar: 0.032 | best_acc: 87.638 
+[2022-08-23 08:27:15] --> testing on source_test
+[2022-08-23 08:27:52]     I:  49/68 | acc: 97.902
+[2022-08-23 08:28:06] --> testing on target_test
+[2022-08-23 08:28:17] I:  3499/8000 | src_acc: 97.205 | tar_acc: 84.578 | best_acc: 87.638
+[2022-08-23 08:28:17]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:28:17]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:28:18] I:  3500/8000 | lr: 0.00006 | l_cls_src: 0.012 | l_cls_tar: 0.884 | l_alg: 0.709 | l_hda: 0.025 | l_ttl: 0.746 | ent_tar: 0.027 | best_acc: 87.638 
+[2022-08-23 08:29:12] I:  3550/8000 | lr: 0.00006 | l_cls_src: 0.001 | l_cls_tar: 1.709 | l_alg: 0.711 | l_hda: 0.034 | l_ttl: 0.746 | ent_tar: 0.018 | best_acc: 87.638 
+[2022-08-23 08:30:08] I:  3600/8000 | lr: 0.00006 | l_cls_src: 0.145 | l_cls_tar: 2.280 | l_alg: 0.694 | l_hda: 0.033 | l_ttl: 0.872 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 08:31:02] I:  3650/8000 | lr: 0.00006 | l_cls_src: 0.006 | l_cls_tar: 2.300 | l_alg: 0.708 | l_hda: 0.028 | l_ttl: 0.742 | ent_tar: 0.017 | best_acc: 87.638 
+[2022-08-23 08:31:57] I:  3700/8000 | lr: 0.00005 | l_cls_src: 0.064 | l_cls_tar: 2.822 | l_alg: 0.681 | l_hda: 0.039 | l_ttl: 0.783 | ent_tar: 0.024 | best_acc: 87.638 
+[2022-08-23 08:32:52] I:  3750/8000 | lr: 0.00005 | l_cls_src: 0.014 | l_cls_tar: 2.190 | l_alg: 0.693 | l_hda: 0.034 | l_ttl: 0.741 | ent_tar: 0.014 | best_acc: 87.638 
+[2022-08-23 08:33:47] I:  3800/8000 | lr: 0.00005 | l_cls_src: 0.021 | l_cls_tar: 2.144 | l_alg: 0.706 | l_hda: 0.061 | l_ttl: 0.789 | ent_tar: 0.017 | best_acc: 87.638 
+[2022-08-23 08:34:41] I:  3850/8000 | lr: 0.00005 | l_cls_src: 0.007 | l_cls_tar: 2.098 | l_alg: 0.714 | l_hda: 0.067 | l_ttl: 0.788 | ent_tar: 0.005 | best_acc: 87.638 
+[2022-08-23 08:35:36] I:  3900/8000 | lr: 0.00005 | l_cls_src: 0.001 | l_cls_tar: 1.786 | l_alg: 0.687 | l_hda: 0.041 | l_ttl: 0.729 | ent_tar: 0.018 | best_acc: 87.638 
+[2022-08-23 08:36:30] I:  3950/8000 | lr: 0.00005 | l_cls_src: 0.041 | l_cls_tar: 1.294 | l_alg: 0.711 | l_hda: 0.034 | l_ttl: 0.786 | ent_tar: 0.037 | best_acc: 87.638 
+[2022-08-23 08:37:23] --> testing on source_test
+[2022-08-23 08:38:00]     I:  49/68 | acc: 98.696
+[2022-08-23 08:38:14] --> testing on target_test
+[2022-08-23 08:38:24] I:  3999/8000 | src_acc: 98.479 | tar_acc: 85.373 | best_acc: 87.638
+[2022-08-23 08:38:25]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:38:25]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:38:26] I:  4000/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 0.904 | l_alg: 0.688 | l_hda: 0.045 | l_ttl: 0.736 | ent_tar: 0.008 | best_acc: 87.638 
+[2022-08-23 08:39:21] I:  4050/8000 | lr: 0.00005 | l_cls_src: 0.052 | l_cls_tar: 2.900 | l_alg: 0.712 | l_hda: 0.037 | l_ttl: 0.802 | ent_tar: 0.023 | best_acc: 87.638 
+[2022-08-23 08:40:16] I:  4100/8000 | lr: 0.00005 | l_cls_src: 0.002 | l_cls_tar: 2.025 | l_alg: 0.709 | l_hda: 0.045 | l_ttl: 0.756 | ent_tar: 0.039 | best_acc: 87.638 
+[2022-08-23 08:41:10] I:  4150/8000 | lr: 0.00005 | l_cls_src: 0.004 | l_cls_tar: 3.269 | l_alg: 0.683 | l_hda: 0.025 | l_ttl: 0.713 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:42:05] I:  4200/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 0.797 | l_alg: 0.701 | l_hda: 0.033 | l_ttl: 0.738 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 08:43:00] I:  4250/8000 | lr: 0.00005 | l_cls_src: 0.015 | l_cls_tar: 1.034 | l_alg: 0.705 | l_hda: 0.042 | l_ttl: 0.762 | ent_tar: 0.028 | best_acc: 87.638 
+[2022-08-23 08:43:54] I:  4300/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 2.017 | l_alg: 0.696 | l_hda: 0.036 | l_ttl: 0.735 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 08:44:49] I:  4350/8000 | lr: 0.00005 | l_cls_src: 0.025 | l_cls_tar: 1.796 | l_alg: 0.702 | l_hda: 0.046 | l_ttl: 0.773 | ent_tar: 0.015 | best_acc: 87.638 
+[2022-08-23 08:45:44] I:  4400/8000 | lr: 0.00005 | l_cls_src: 0.076 | l_cls_tar: 1.981 | l_alg: 0.709 | l_hda: 0.038 | l_ttl: 0.823 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 08:46:39] I:  4450/8000 | lr: 0.00005 | l_cls_src: 0.008 | l_cls_tar: 3.377 | l_alg: 0.702 | l_hda: 0.039 | l_ttl: 0.749 | ent_tar: 0.023 | best_acc: 87.638 
+[2022-08-23 08:47:31] --> testing on source_test
+[2022-08-23 08:48:08]     I:  49/68 | acc: 98.469
+[2022-08-23 08:48:22] --> testing on target_test
+[2022-08-23 08:48:32] I:  4499/8000 | src_acc: 98.192 | tar_acc: 85.129 | best_acc: 87.638
+[2022-08-23 08:48:33]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:48:33]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:48:35] I:  4500/8000 | lr: 0.00005 | l_cls_src: 0.005 | l_cls_tar: 1.964 | l_alg: 0.729 | l_hda: 0.027 | l_ttl: 0.761 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 08:49:29] I:  4550/8000 | lr: 0.00005 | l_cls_src: 0.047 | l_cls_tar: 2.131 | l_alg: 0.690 | l_hda: 0.035 | l_ttl: 0.772 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 08:50:23] I:  4600/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 2.453 | l_alg: 0.690 | l_hda: 0.032 | l_ttl: 0.725 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:51:18] I:  4650/8000 | lr: 0.00005 | l_cls_src: 0.021 | l_cls_tar: 1.943 | l_alg: 0.710 | l_hda: 0.034 | l_ttl: 0.765 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 08:52:13] I:  4700/8000 | lr: 0.00005 | l_cls_src: 0.009 | l_cls_tar: 1.712 | l_alg: 0.666 | l_hda: 0.019 | l_ttl: 0.694 | ent_tar: 0.012 | best_acc: 87.638 
+[2022-08-23 08:53:07] I:  4750/8000 | lr: 0.00005 | l_cls_src: 0.001 | l_cls_tar: 1.503 | l_alg: 0.700 | l_hda: 0.029 | l_ttl: 0.731 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 08:54:02] I:  4800/8000 | lr: 0.00005 | l_cls_src: 0.006 | l_cls_tar: 1.860 | l_alg: 0.708 | l_hda: 0.029 | l_ttl: 0.742 | ent_tar: 0.012 | best_acc: 87.638 
+[2022-08-23 08:54:57] I:  4850/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 2.503 | l_alg: 0.695 | l_hda: 0.030 | l_ttl: 0.728 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 08:55:52] I:  4900/8000 | lr: 0.00005 | l_cls_src: 0.077 | l_cls_tar: 1.358 | l_alg: 0.710 | l_hda: 0.030 | l_ttl: 0.818 | ent_tar: 0.016 | best_acc: 87.638 
+[2022-08-23 08:56:47] I:  4950/8000 | lr: 0.00005 | l_cls_src: 0.009 | l_cls_tar: 1.245 | l_alg: 0.705 | l_hda: 0.022 | l_ttl: 0.735 | ent_tar: 0.004 | best_acc: 87.638 
+[2022-08-23 08:57:40] --> testing on source_test
+[2022-08-23 08:58:17]     I:  49/68 | acc: 97.959
+[2022-08-23 08:58:30] --> testing on target_test
+[2022-08-23 08:58:41] I:  4999/8000 | src_acc: 98.068 | tar_acc: 84.272 | best_acc: 87.638
+[2022-08-23 08:58:42]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 08:58:42]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:58:43] I:  5000/8000 | lr: 0.00005 | l_cls_src: 0.003 | l_cls_tar: 1.443 | l_alg: 0.713 | l_hda: 0.022 | l_ttl: 0.738 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 08:58:44]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-005000.pt
+[2022-08-23 08:58:44]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 08:59:38] I:  5050/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 2.387 | l_alg: 0.699 | l_hda: 0.032 | l_ttl: 0.733 | ent_tar: 0.006 | best_acc: 87.638 
+[2022-08-23 09:00:33] I:  5100/8000 | lr: 0.00004 | l_cls_src: 0.223 | l_cls_tar: 1.415 | l_alg: 0.672 | l_hda: 0.036 | l_ttl: 0.931 | ent_tar: 0.025 | best_acc: 87.638 
+[2022-08-23 09:01:27] I:  5150/8000 | lr: 0.00004 | l_cls_src: 0.004 | l_cls_tar: 3.261 | l_alg: 0.716 | l_hda: 0.027 | l_ttl: 0.747 | ent_tar: 0.016 | best_acc: 87.638 
+[2022-08-23 09:02:23] I:  5200/8000 | lr: 0.00004 | l_cls_src: 0.008 | l_cls_tar: 1.840 | l_alg: 0.702 | l_hda: 0.055 | l_ttl: 0.765 | ent_tar: 0.035 | best_acc: 87.638 
+[2022-08-23 09:03:18] I:  5250/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 1.191 | l_alg: 0.693 | l_hda: 0.025 | l_ttl: 0.719 | ent_tar: 0.038 | best_acc: 87.638 
+[2022-08-23 09:04:13] I:  5300/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 2.395 | l_alg: 0.683 | l_hda: 0.023 | l_ttl: 0.709 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:05:07] I:  5350/8000 | lr: 0.00004 | l_cls_src: 0.075 | l_cls_tar: 2.449 | l_alg: 0.707 | l_hda: 0.031 | l_ttl: 0.813 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:06:03] I:  5400/8000 | lr: 0.00004 | l_cls_src: 0.107 | l_cls_tar: 1.239 | l_alg: 0.697 | l_hda: 0.044 | l_ttl: 0.848 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 09:06:58] I:  5450/8000 | lr: 0.00004 | l_cls_src: 0.008 | l_cls_tar: 2.101 | l_alg: 0.692 | l_hda: 0.020 | l_ttl: 0.721 | ent_tar: 0.038 | best_acc: 87.638 
+[2022-08-23 09:07:50] --> testing on source_test
+[2022-08-23 09:08:28]     I:  49/68 | acc: 98.073
+[2022-08-23 09:08:41] --> testing on target_test
+[2022-08-23 09:08:52] I:  5499/8000 | src_acc: 97.616 | tar_acc: 85.373 | best_acc: 87.638
+[2022-08-23 09:08:53]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:08:53]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 09:08:54] I:  5500/8000 | lr: 0.00004 | l_cls_src: 0.022 | l_cls_tar: 0.965 | l_alg: 0.703 | l_hda: 0.032 | l_ttl: 0.756 | ent_tar: 0.014 | best_acc: 87.638 
+[2022-08-23 09:09:48] I:  5550/8000 | lr: 0.00004 | l_cls_src: 0.005 | l_cls_tar: 2.324 | l_alg: 0.692 | l_hda: 0.037 | l_ttl: 0.734 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 09:10:43] I:  5600/8000 | lr: 0.00004 | l_cls_src: 0.017 | l_cls_tar: 1.057 | l_alg: 0.702 | l_hda: 0.025 | l_ttl: 0.744 | ent_tar: 0.004 | best_acc: 87.638 
+[2022-08-23 09:11:38] I:  5650/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 2.217 | l_alg: 0.705 | l_hda: 0.031 | l_ttl: 0.738 | ent_tar: 0.008 | best_acc: 87.638 
+[2022-08-23 09:12:33] I:  5700/8000 | lr: 0.00004 | l_cls_src: 0.016 | l_cls_tar: 2.526 | l_alg: 0.710 | l_hda: 0.028 | l_ttl: 0.755 | ent_tar: 0.009 | best_acc: 87.638 
+[2022-08-23 09:13:28] I:  5750/8000 | lr: 0.00004 | l_cls_src: 0.001 | l_cls_tar: 1.599 | l_alg: 0.707 | l_hda: 0.024 | l_ttl: 0.731 | ent_tar: 0.020 | best_acc: 87.638 
+[2022-08-23 09:14:23] I:  5800/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 2.811 | l_alg: 0.692 | l_hda: 0.028 | l_ttl: 0.722 | ent_tar: 0.021 | best_acc: 87.638 
+[2022-08-23 09:15:18] I:  5850/8000 | lr: 0.00004 | l_cls_src: 0.004 | l_cls_tar: 1.014 | l_alg: 0.724 | l_hda: 0.030 | l_ttl: 0.758 | ent_tar: 0.022 | best_acc: 87.638 
+[2022-08-23 09:16:13] I:  5900/8000 | lr: 0.00004 | l_cls_src: 0.006 | l_cls_tar: 1.691 | l_alg: 0.698 | l_hda: 0.031 | l_ttl: 0.735 | ent_tar: 0.028 | best_acc: 87.638 
+[2022-08-23 09:17:07] I:  5950/8000 | lr: 0.00004 | l_cls_src: 0.088 | l_cls_tar: 3.921 | l_alg: 0.690 | l_hda: 0.032 | l_ttl: 0.810 | ent_tar: 0.014 | best_acc: 87.638 
+[2022-08-23 09:18:01] --> testing on source_test
+[2022-08-23 09:18:38]     I:  49/68 | acc: 99.036
+[2022-08-23 09:18:52] --> testing on target_test
+[2022-08-23 09:19:03] I:  5999/8000 | src_acc: 98.561 | tar_acc: 85.251 | best_acc: 87.638
+[2022-08-23 09:19:03]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:19:03]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 09:19:05] I:  6000/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 2.862 | l_alg: 0.689 | l_hda: 0.021 | l_ttl: 0.714 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 09:19:59] I:  6050/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 2.913 | l_alg: 0.700 | l_hda: 0.038 | l_ttl: 0.741 | ent_tar: 0.021 | best_acc: 87.638 
+[2022-08-23 09:20:54] I:  6100/8000 | lr: 0.00004 | l_cls_src: 0.014 | l_cls_tar: 3.208 | l_alg: 0.679 | l_hda: 0.029 | l_ttl: 0.722 | ent_tar: 0.005 | best_acc: 87.638 
+[2022-08-23 09:21:48] I:  6150/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 1.973 | l_alg: 0.701 | l_hda: 0.018 | l_ttl: 0.721 | ent_tar: 0.006 | best_acc: 87.638 
+[2022-08-23 09:22:43] I:  6200/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 1.031 | l_alg: 0.687 | l_hda: 0.024 | l_ttl: 0.712 | ent_tar: 0.005 | best_acc: 87.638 
+[2022-08-23 09:23:38] I:  6250/8000 | lr: 0.00004 | l_cls_src: 0.000 | l_cls_tar: 1.188 | l_alg: 0.697 | l_hda: 0.031 | l_ttl: 0.729 | ent_tar: 0.001 | best_acc: 87.638 
+[2022-08-23 09:24:33] I:  6300/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 0.956 | l_alg: 0.687 | l_hda: 0.038 | l_ttl: 0.728 | ent_tar: 0.025 | best_acc: 87.638 
+[2022-08-23 09:25:28] I:  6350/8000 | lr: 0.00004 | l_cls_src: 0.258 | l_cls_tar: 1.291 | l_alg: 0.703 | l_hda: 0.035 | l_ttl: 0.996 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:26:23] I:  6400/8000 | lr: 0.00004 | l_cls_src: 0.001 | l_cls_tar: 1.730 | l_alg: 0.679 | l_hda: 0.030 | l_ttl: 0.710 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:27:17] I:  6450/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 3.540 | l_alg: 0.699 | l_hda: 0.019 | l_ttl: 0.721 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:28:09] --> testing on source_test
+[2022-08-23 09:28:45]     I:  49/68 | acc: 98.243
+[2022-08-23 09:28:59] --> testing on target_test
+[2022-08-23 09:29:09] I:  6499/8000 | src_acc: 98.479 | tar_acc: 84.333 | best_acc: 87.638
+[2022-08-23 09:29:10]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:29:10]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 09:29:12] I:  6500/8000 | lr: 0.00004 | l_cls_src: 0.001 | l_cls_tar: 1.912 | l_alg: 0.706 | l_hda: 0.036 | l_ttl: 0.743 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:30:07] I:  6550/8000 | lr: 0.00004 | l_cls_src: 0.022 | l_cls_tar: 2.876 | l_alg: 0.710 | l_hda: 0.018 | l_ttl: 0.750 | ent_tar: 0.006 | best_acc: 87.638 
+[2022-08-23 09:31:02] I:  6600/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 2.505 | l_alg: 0.688 | l_hda: 0.024 | l_ttl: 0.715 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:31:56] I:  6650/8000 | lr: 0.00004 | l_cls_src: 0.004 | l_cls_tar: 2.575 | l_alg: 0.684 | l_hda: 0.025 | l_ttl: 0.713 | ent_tar: 0.001 | best_acc: 87.638 
+[2022-08-23 09:32:51] I:  6700/8000 | lr: 0.00004 | l_cls_src: 0.009 | l_cls_tar: 2.715 | l_alg: 0.699 | l_hda: 0.021 | l_ttl: 0.728 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 09:33:46] I:  6750/8000 | lr: 0.00004 | l_cls_src: 0.019 | l_cls_tar: 1.858 | l_alg: 0.703 | l_hda: 0.034 | l_ttl: 0.757 | ent_tar: 0.001 | best_acc: 87.638 
+[2022-08-23 09:34:41] I:  6800/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 1.072 | l_alg: 0.694 | l_hda: 0.029 | l_ttl: 0.725 | ent_tar: 0.032 | best_acc: 87.638 
+[2022-08-23 09:35:36] I:  6850/8000 | lr: 0.00004 | l_cls_src: 0.005 | l_cls_tar: 2.119 | l_alg: 0.681 | l_hda: 0.026 | l_ttl: 0.711 | ent_tar: 0.030 | best_acc: 87.638 
+[2022-08-23 09:36:30] I:  6900/8000 | lr: 0.00004 | l_cls_src: 0.009 | l_cls_tar: 0.317 | l_alg: 0.685 | l_hda: 0.017 | l_ttl: 0.711 | ent_tar: 0.033 | best_acc: 87.638 
+[2022-08-23 09:37:25] I:  6950/8000 | lr: 0.00004 | l_cls_src: 0.003 | l_cls_tar: 0.941 | l_alg: 0.696 | l_hda: 0.018 | l_ttl: 0.717 | ent_tar: 0.038 | best_acc: 87.638 
+[2022-08-23 09:38:18] --> testing on source_test
+[2022-08-23 09:38:55]     I:  49/68 | acc: 99.036
+[2022-08-23 09:39:09] --> testing on target_test
+[2022-08-23 09:39:20] I:  6999/8000 | src_acc: 98.561 | tar_acc: 85.129 | best_acc: 87.638
+[2022-08-23 09:39:20]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:39:20]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 09:39:21] I:  7000/8000 | lr: 0.00004 | l_cls_src: 0.066 | l_cls_tar: 1.067 | l_alg: 0.699 | l_hda: 0.034 | l_ttl: 0.799 | ent_tar: 0.001 | best_acc: 87.638 
+[2022-08-23 09:40:16] I:  7050/8000 | lr: 0.00004 | l_cls_src: 0.008 | l_cls_tar: 1.449 | l_alg: 0.701 | l_hda: 0.025 | l_ttl: 0.733 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:41:11] I:  7100/8000 | lr: 0.00004 | l_cls_src: 0.011 | l_cls_tar: 2.559 | l_alg: 0.688 | l_hda: 0.030 | l_ttl: 0.728 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:42:06] I:  7150/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 2.035 | l_alg: 0.701 | l_hda: 0.023 | l_ttl: 0.726 | ent_tar: 0.036 | best_acc: 87.638 
+[2022-08-23 09:43:01] I:  7200/8000 | lr: 0.00004 | l_cls_src: 0.004 | l_cls_tar: 3.103 | l_alg: 0.679 | l_hda: 0.026 | l_ttl: 0.708 | ent_tar: 0.008 | best_acc: 87.638 
+[2022-08-23 09:43:56] I:  7250/8000 | lr: 0.00004 | l_cls_src: 0.122 | l_cls_tar: 1.451 | l_alg: 0.695 | l_hda: 0.022 | l_ttl: 0.838 | ent_tar: 0.023 | best_acc: 87.638 
+[2022-08-23 09:44:51] I:  7300/8000 | lr: 0.00004 | l_cls_src: 0.002 | l_cls_tar: 3.507 | l_alg: 0.699 | l_hda: 0.031 | l_ttl: 0.732 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:45:46] I:  7350/8000 | lr: 0.00004 | l_cls_src: 0.027 | l_cls_tar: 2.906 | l_alg: 0.674 | l_hda: 0.015 | l_ttl: 0.716 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:46:41] I:  7400/8000 | lr: 0.00003 | l_cls_src: 0.002 | l_cls_tar: 2.323 | l_alg: 0.695 | l_hda: 0.028 | l_ttl: 0.725 | ent_tar: 0.003 | best_acc: 87.638 
+[2022-08-23 09:47:35] I:  7450/8000 | lr: 0.00003 | l_cls_src: 0.002 | l_cls_tar: 2.354 | l_alg: 0.699 | l_hda: 0.027 | l_ttl: 0.729 | ent_tar: 0.017 | best_acc: 87.638 
+[2022-08-23 09:48:28] --> testing on source_test
+[2022-08-23 09:49:05]     I:  49/68 | acc: 98.469
+[2022-08-23 09:49:19] --> testing on target_test
+[2022-08-23 09:49:30] I:  7499/8000 | src_acc: 98.603 | tar_acc: 84.272 | best_acc: 87.638
+[2022-08-23 09:49:30]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:49:30]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
+[2022-08-23 09:49:31] I:  7500/8000 | lr: 0.00003 | l_cls_src: 0.002 | l_cls_tar: 2.698 | l_alg: 0.685 | l_hda: 0.026 | l_ttl: 0.713 | ent_tar: 0.002 | best_acc: 87.638 
+[2022-08-23 09:50:26] I:  7550/8000 | lr: 0.00003 | l_cls_src: 0.001 | l_cls_tar: 1.736 | l_alg: 0.710 | l_hda: 0.036 | l_ttl: 0.747 | ent_tar: 0.008 | best_acc: 87.638 
+[2022-08-23 09:51:21] I:  7600/8000 | lr: 0.00003 | l_cls_src: 0.013 | l_cls_tar: 1.958 | l_alg: 0.704 | l_hda: 0.014 | l_ttl: 0.731 | ent_tar: 0.004 | best_acc: 87.638 
+[2022-08-23 09:52:16] I:  7650/8000 | lr: 0.00003 | l_cls_src: 0.005 | l_cls_tar: 2.212 | l_alg: 0.693 | l_hda: 0.018 | l_ttl: 0.716 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 09:53:11] I:  7700/8000 | lr: 0.00003 | l_cls_src: 0.003 | l_cls_tar: 2.650 | l_alg: 0.702 | l_hda: 0.022 | l_ttl: 0.726 | ent_tar: 0.016 | best_acc: 87.638 
+[2022-08-23 09:54:06] I:  7750/8000 | lr: 0.00003 | l_cls_src: 0.016 | l_cls_tar: 2.990 | l_alg: 0.699 | l_hda: 0.018 | l_ttl: 0.734 | ent_tar: 0.020 | best_acc: 87.638 
+[2022-08-23 09:55:00] I:  7800/8000 | lr: 0.00003 | l_cls_src: 0.001 | l_cls_tar: 2.434 | l_alg: 0.680 | l_hda: 0.019 | l_ttl: 0.699 | ent_tar: 0.004 | best_acc: 87.638 
+[2022-08-23 09:55:55] I:  7850/8000 | lr: 0.00003 | l_cls_src: 0.018 | l_cls_tar: 2.710 | l_alg: 0.695 | l_hda: 0.019 | l_ttl: 0.732 | ent_tar: 0.013 | best_acc: 87.638 
+[2022-08-23 09:56:49] I:  7900/8000 | lr: 0.00003 | l_cls_src: 0.007 | l_cls_tar: 1.927 | l_alg: 0.685 | l_hda: 0.028 | l_ttl: 0.720 | ent_tar: 0.019 | best_acc: 87.638 
+[2022-08-23 09:57:44] I:  7950/8000 | lr: 0.00003 | l_cls_src: 0.003 | l_cls_tar: 2.164 | l_alg: 0.696 | l_hda: 0.023 | l_ttl: 0.722 | ent_tar: 0.007 | best_acc: 87.638 
+[2022-08-23 09:58:37] --> testing on source_test
+[2022-08-23 09:59:14]     I:  49/68 | acc: 98.753
+[2022-08-23 09:59:27] --> testing on target_test
+[2022-08-23 09:59:38] I:  7999/8000 | src_acc: 98.767 | tar_acc: 84.333 | best_acc: 87.638
+[2022-08-23 09:59:38]     models saved to exps/binTA/ckpt/Foveal2Biop_123/models-last.pt
+[2022-08-23 09:59:38]     keys: dict_keys(['optimizer', 'ite', 'best_acc', 'base_net', 'd_net'])
