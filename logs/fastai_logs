@@ -5,6 +5,7 @@ wandb: ⭐️ View project at https://wandb.ai/nikilr/classification_project
 wandb: 🚀 View run at https://wandb.ai/nikilr/classification_project/runs/2lrs32n9
 ['Atypical', 'Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Normal']
 dls train size : 2433, dls val size : 1634
+Train : Foveal , Val: Biop
 epoch     train_loss  valid_loss  accuracy  f1_score  roc_auc_score  time    ------------------------------------| 29.28% [89/304 00:50<02:02 9.6281]
 0         1.825409    2.246115    0.239290  0.200659  0.610994      03:16                                                                             
 Better model found at epoch 0 with valid_loss value: 2.246114730834961.
