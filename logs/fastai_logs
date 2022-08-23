@@ -1,0 +1,136 @@
+
+FOV-BIOP
+Syncing run atomic-hill-50
+wandb: ⭐️ View project at https://wandb.ai/nikilr/classification_project
+wandb: 🚀 View run at https://wandb.ai/nikilr/classification_project/runs/2lrs32n9
+['Atypical', 'Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Normal']
+dls train size : 2433, dls val size : 1634
+epoch     train_loss  valid_loss  accuracy  f1_score  roc_auc_score  time    ------------------------------------| 29.28% [89/304 00:50<02:02 9.6281]
+0         1.825409    2.246115    0.239290  0.200659  0.610994      03:16                                                                             
+Better model found at epoch 0 with valid_loss value: 2.246114730834961.
+1         1.069286    1.760061    0.422277  0.264539  0.705759       01:24                                                                             
+Better model found at epoch 1 with valid_loss value: 1.7600609064102173.
+2         0.737851    1.868969    0.323745  0.180597  0.719038       01:24                                                                             
+3         0.733173    1.374140    0.435129  0.320792  0.781239       01:24                                                                             
+Better model found at epoch 3 with valid_loss value: 1.3741401433944702.
+epoch     train_loss  valid_loss  accuracy  f1_score  roc_auc_score  time    
+0         0.885985    4.517942    0.048348  0.039392  0.607605       01:28                                                                              
+Better model found at epoch 0 with valid_loss value: 4.517941951751709.
+1         0.981640    1.902123    0.199510  0.136165  0.609763       01:22                                                                              
+Better model found at epoch 1 with valid_loss value: 1.9021227359771729.
+2         1.290498    1.988920    0.149939  0.064143  0.570353       01:18                                                                              
+3         1.044757    2.048378    0.201346  0.086746  0.582664       01:18                                                                              
+4         0.853319    1.871604    0.262546  0.221831  0.607557       01:18                                                                              
+Better model found at epoch 4 with valid_loss value: 1.8716039657592773.
+5         0.771780    1.843005    0.245410  0.069948  0.498694       01:18                                                                              
+Better model found at epoch 5 with valid_loss value: 1.8430051803588867.
+6         0.734797    1.497872    0.422889  0.240901  0.747180       01:18                                                                              
+Better model found at epoch 6 with valid_loss value: 1.49787175655365.
+7         0.742491    2.027612    0.209914  0.066012  0.435031       01:18                                                                              
+8         0.671260    1.904062    0.270502  0.128538  0.578368       01:18                                                                              
+9         0.640765    2.068128    0.277846  0.183328  0.682364       01:19                                                                               
+10        0.578603    1.980657    0.345777  0.175727  0.559476       01:19                                                                               
+11        0.553901    1.306123    0.441248  0.290529  0.772480       01:19                                                                               
+Better model found at epoch 11 with valid_loss value: 1.3061233758926392.
+12        0.561451    1.855519    0.334149  0.222624  0.597318       01:19                                                                               
+13        0.467416    1.859877    0.357405  0.179334  0.697498       01:18                                                                               
+14        0.639941    2.345730    0.282742  0.143933  0.581552       01:19                                                                               
+15        0.389265    1.761528    0.310894  0.248386  0.665254       01:18                                                                               
+16        0.493291    1.546736    0.446144  0.269855  0.700304       01:19                                                                               
+17        0.514607    2.397406    0.121787  0.090210  0.587692       01:19                                                                               
+18        0.438135    1.746619    0.329253  0.200854  0.649836       01:18                                                                               
+19        0.413788    1.754826    0.384945  0.224832  0.760167       01:18                                                                               
+20        0.379807    1.393581    0.473072  0.384863  0.808315       01:19                                                                               
+21        0.400906    2.142558    0.292534  0.169798  0.785761       01:19                                                                               
+22        0.349774    1.826304    0.453488  0.258558  0.755060       02:13                                                                               
+23        0.360395    1.696223    0.392289  0.274283  0.691795       01:35                                                                               
+24        0.334475    1.686843    0.344553  0.228096  0.650581       01:19                                                                               
+25        0.351930    1.270024    0.594859  0.358115  0.757535       01:19                                                                               
+Better model found at epoch 25 with valid_loss value: 1.2700244188308716.
+26        0.331908    1.135252    0.558752  0.389973  0.809776       01:19                                                                               
+Better model found at epoch 26 with valid_loss value: 1.1352516412734985.
+27        0.323547    1.097213    0.618727  0.465820  0.774540       01:19                                                                               
+Better model found at epoch 27 with valid_loss value: 1.0972132682800293.
+28        0.304976    1.070504    0.608935  0.469456  0.812295       01:19                                                                               
+Better model found at epoch 28 with valid_loss value: 1.0705037117004395.
+29        0.265157    1.365346    0.474296  0.371744  0.768347       01:18                                                                               
+30        0.297615    1.356225    0.496328  0.361434  0.758625       01:19                                                                               
+31        0.349219    1.249428    0.586903  0.426489  0.802366       01:19                                                                               
+32        0.258867    1.747882    0.389229  0.258663  0.636696       01:19                                                                               
+33        0.281294    1.226449    0.585067  0.387741  0.795377       01:19                                                                               
+34        0.239193    1.397041    0.499388  0.327828  0.780744       01:19                                                                               
+35        0.258649    0.962299    0.652999  0.480890  0.840158       01:19                                                                               
+Better model found at epoch 35 with valid_loss value: 0.962299108505249.
+36        0.236552    1.359084    0.525092  0.349524  0.824955       01:19                                                                               
+37        0.220708    0.984491    0.655447  0.492376  0.853016       01:19                                                                               
+38        0.220532    1.071288    0.639535  0.496763  0.822667       01:19                                                                               
+39        0.176539    1.035000    0.645043  0.483017  0.834192       01:19                                                                               
+40        0.210709    1.253384    0.571603  0.406347  0.796458       01:18                                                                               
+41        0.214827    1.187648    0.616279  0.464148  0.808787       01:19                                                                               
+42        0.208019    1.077502    0.628519  0.473716  0.813216       01:19                                                                               
+43        0.238184    0.996305    0.654223  0.500627  0.832183       01:18                                                                               
+44        0.194442    1.029843    0.647491  0.487915  0.837988       01:18                                                                               
+45        0.218788    1.064128    0.657895  0.495959  0.839230       01:19                                                                               
+46        0.169002    0.950115    0.679927  0.518132  0.849806       01:18                                                                               
+Better model found at epoch 46 with valid_loss value: 0.9501153230667114.
+47        0.166801    1.005827    0.670135  0.514669  0.836456       01:19                                                                               
+48        0.241252    0.997585    0.671971  0.516574  0.842121       01:19                                                                               
+49        0.154799    0.921919    0.673195  0.507689  0.855027       01:58                                                                               
+Better model found at epoch 49 with valid_loss value: 0.9219186305999756.
+saving model
+model saved
+Accuracy: TensorBase(0.6732)                                                                                                                
+
+***************
+
+[('Grade 3', 'Grade 2', 76), ('Grade 2', 'Grade 4', 61), ('Grade 1', 'Grade 2', 59), ('Grade 2', 'Grade 3', 54), ('Grade 3', 'Grade 4', 44), ('Grade 1', 'Grade 4', 42), ('Normal', 'Grade 1', 38), ('Normal', 'Grade 4', 24), ('Normal', 'Grade 2', 18), ('Grade 1', 'Normal', 14), ('Atypical', 'Normal', 11), ('Atypical', 'Grade 1', 10), ('Grade 3', 'Normal', 10), ('Atypical', 'Grade 2', 9), ('Grade 4', 'Normal', 9), ('Normal', 'Atypical', 9), ('Grade 1', 'Grade 3', 7), ('Grade 4', 'Grade 1', 7), ('Grade 2', 'Grade 1', 6), ('Grade 4', 'Grade 2', 6), ('Grade 4', 'Grade 3', 6), ('Normal', 'Grade 3', 5), ('Grade 2', 'Normal', 3), ('Atypical', 'Grade 3', 2), ('Grade 3', 'Grade 1', 2)]
+END Training
+
+***************
+
+STARTVal
+Biop Data
+done
+['Atypical', 'Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Normal']
+dls bioptigen train size : 1634, dls val size : 407
+Val Accuracy: 0.3538083538083538                                                                                                        
+
+****************
+
+valid_targets:
+{2: 43, 5: 101, 0: 8, 1: 109, 3: 52, 4: 94}
+
+****************
+valid_preds:
+{4: 244, 5: 163}
+
+***************
+
+
+[('Grade 1', 'Grade 4', 87), ('Grade 3', 'Normal', 40), ('Normal', 'Grade 4', 38), ('Grade 2', 'Grade 4', 26), ('Grade 1', 'Normal', 22), ('Grade 2', 'Normal', 17), ('Grade 4', 'Normal', 13), ('Grade 3', 'Grade 4', 12), ('Atypical', 'Normal', 8)]
+******************************
+CM:
+ [[ 0  0  0  0  0  8]
+ [ 0  0  0  0 87 22]
+ [ 0  0  0  0 26 17]
+ [ 0  0  0  0 12 40]
+ [ 0  0  0  0 81 13]
+ [ 0  0  0  0 38 63]]
+/home/n/nrb27/anaconda3/envs/fastai/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/n/nrb27/anaconda3/envs/fastai/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/n/nrb27/anaconda3/envs/fastai/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00         8
+           1       0.00      0.00      0.00       109
+           2       0.00      0.00      0.00        43
+           3       0.00      0.00      0.00        52
+           4       0.33      0.86      0.48        94
+           5       0.39      0.62      0.48       101
+
+    accuracy                           0.35       407
+   macro avg       0.12      0.25      0.16       407
+weighted avg       0.17      0.35      0.23       407
