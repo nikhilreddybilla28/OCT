@@ -1,0 +1,48 @@
+E1:
+
+Accuracy: TensorBase(0.9868)                                                                                                              
+
+***************
+
+[('Normal', 'Abnormal', 5), ('Abnormal', 'Normal'3)]                               
+END Trainng 
+
+***************
+
+START Val
+BIop Data
+
+['Abnormal', 'Normal']
+dls bioptigen train size : 1634, dls val size : 407
+Val Accuracy: 0.7641277641277642                                                                                                        
+
+****************
+
+valid_targets:
+{0: 306, 1: 101}
+
+****************
+valid_preds:
+{0: 402, 1: 5}
+
+***************
+
+
+[('Normal', 'Abnormal', 96)]                                                                                                            
+******************************
+CM:
+ [[306   0]
+ [ 96   5]]
+              precision    recall  f1-score   support
+
+           0       0.76      1.00      0.86       306
+           1       1.00      0.05      0.09       101
+
+    accuracy                           0.76       407
+   macro avg       0.88      0.52      0.48       407
+weighted avg       0.82      0.76      0.67       407
+
+
+E2:
+
+
